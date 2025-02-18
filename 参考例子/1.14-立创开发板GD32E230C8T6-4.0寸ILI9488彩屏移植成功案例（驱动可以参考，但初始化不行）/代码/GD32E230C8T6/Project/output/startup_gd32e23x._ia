@@ -1,0 +1,11 @@
+--cpu=Cortex-M23 -g --pd "__MICROLIB SETA 1"
+-I.\RTE\_GD32E230C_START
+-IC:\Users\Administrator\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+-IC:\Users\Administrator\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Include
+--pd "__UVISION_VERSION SETA 538"
+--pd "_RTE_ SETA 1"
+--pd "GD32E23x SETA 1"
+--pd "_RTE_ SETA 1"
+--list .\list\startup_gd32e23x.lst
+--xref -o .\output\startup_gd32e23x.o
+--depend .\output\startup_gd32e23x.d "..\Firmware\CMSIS\GD\GD32E23x\Source\ARM\startup_gd32e23x.s"

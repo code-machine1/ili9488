@@ -1,0 +1,273 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: H Administrator, wz, LIC=EXJT4-FSWG5-MMD9I-TXPID-X4RU1-TLSPW
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.37.0.0
+Toolchain Path:  D:\Work Program\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      CMSIS_AGDI_V8M.DLL V1.7.17.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\1.14-Á¢´´¿ª·¢°åGD32E230C8T6-4.0´çILI9488²ÊÆÁÒÆÖ²³É¹¦°¸Àý\´úÂë\GD32E230C8T6\Project\Project.uvprojx
+Project File Date:  02/18/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'D:\Work Program\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'GD32E230C_START'
+compiling gd32e23x_it.c...
+compiling main.c...
+compiling systick.c...
+compiling bsp_usart.c...
+compiling gui.c...
+compiling test.c...
+../Hardware/test.c(37): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        Gui_StrCenter(0,60,"<D7>ÛºÏ²<E2><CA>Ô³<CC><D0><F2>",RED,BLUE,16,1);//<BE><D3><D6><D0><CF><D4>Ê¾     
+                            ^~~~  ~~~~~~~~ ~~~~~~~~~~~~
+../Hardware/test.c(37): warning: passing 'char[13]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Gui_StrCenter(0,60,"<D7>ÛºÏ²<E2><CA>Ô³<CC><D0><F2>",RED,BLUE,16,1);//<BE><D3><D6><D0><CF><D4>Ê¾     
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(23): note: passing argument to parameter 'str' here
+void Gui_StrCenter(u16 x, u16 y,u8 *str,u16 fc,u16 bc,u8 sizey,u8 mode);
+                                    ^
+../Hardware/test.c(38): warning: passing 'char[16]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Gui_StrCenter(0,90,"ILI9488 320X480",RED,BLUE,16,1);//<BE><D3><D6><D0><CF><D4>Ê¾
+                           ^~~~~~~~~~~~~~~~~
+../Hardware/gui.h(23): note: passing argument to parameter 'str' here
+void Gui_StrCenter(u16 x, u16 y,u8 *str,u16 fc,u16 bc,u8 sizey,u8 mode);
+                                    ^
+../Hardware/test.c(52): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>1:<B4><BF>É«<CC><EE><B3><E4><B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~  ~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(52): warning: passing 'char[19]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>1:<B4><BF>É«<CC><EE><B3><E4><B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(54): warning: passing 'char[6]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(lcddev.width-50,30,"White",BLUE,YELLOW,16,1);delay_ms(500);
+                                    ^~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(56): warning: passing 'char[6]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(lcddev.width-50,30,"Black",BLUE,YELLOW,16,1);delay_ms(500);
+                                    ^~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(58): warning: passing 'char[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(lcddev.width-50,30,"Red",BLUE,YELLOW,16,1); delay_ms(500);
+                                    ^~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(60): warning: passing 'char[6]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(lcddev.width-50,30,"Green",BLUE,YELLOW,16,1);delay_ms(500);
+                                    ^~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(62): warning: passing 'char[5]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(lcddev.width-50,30,"Blue",BLUE,YELLOW,16,1);delay_ms(500);
+                                    ^~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(77): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>2:GUI<BE><D8><D0><CE><CC><EE><B3><E4><B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(77): warning: passing 'char[22]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>2:GUI<BE><D8><D0><CE><CC><EE><B3><E4><B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(103): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>3:GUI<BB><AD>Ô²<CC><EE><B3><E4><B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~     ~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(103): warning: passing 'char[22]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>3:GUI<BB><AD>Ô²<CC><EE><B3><E4><B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(123): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>4:Ó¢<CE><C4><CF><D4>Ê¾<B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~   ~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+../Hardware/test.c(123): warning: passing 'char[19]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>4:Ó¢<CE><C4><CF><D4>Ê¾<B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(124): warning: passing 'char[42]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,40,"8X16:abcdefghijklmnopqrstuvwxyz0123456789",RED,BLUE,16,0);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(125): warning: passing 'char[42]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,70,"8X16:ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",RED,BLUE,16,1);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(126): warning: passing 'char[30]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,100,"8X16:~!@#$%^&*()_+{}:<>?/|-+.",RED,BLUE,16,0); 
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(139): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>5:<D6><D0><CE><C4><CF><D4>Ê¾<B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+../Hardware/test.c(139): warning: passing 'char[19]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>5:<D6><D0><CE><C4><CF><D4>Ê¾<B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(140): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        Show_Str(10,30,"16X16:<D6>Ð¾<B0><U+0530><B5><E7><D7>Ó¼<BC><CA><F5><D3><D0><CF><U+07B9><AB>Ë¾<BB><B6>Ó­<C4><FA>",BLUE,YELLOW,16,0);
+                              ^~~~ ~~~~        ~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~        ~~~~ ~~~~~~~~ ~~~~~~~~
+../Hardware/test.c(140): warning: passing 'char[35]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,30,"16X16:<D6>Ð¾<B0><U+0530><B5><E7><D7>Ó¼<BC><CA><F5><D3><D0><CF><U+07B9><AB>Ë¾<BB><B6>Ó­<C4><FA>",BLUE,YELLOW,16,0);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(141): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        Show_Str(10,50,"16X16:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,16,1);
+                                     ^~~~ ~~~~
+../Hardware/test.c(141): warning: passing 'char[20]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,50,"16X16:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,16,1);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(142): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        Show_Str(10,70,"24X24:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,24,1);
+                                     ^~~~ ~~~~
+../Hardware/test.c(142): warning: passing 'char[20]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,70,"24X24:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,24,1);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(143): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        Show_Str(10,100,"32X32:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,32,1);
+                                      ^~~~ ~~~~
+../Hardware/test.c(143): warning: passing 'char[20]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(10,100,"32X32:Welcome<D6>Ð¾<B0><U+0530>",BLUE,YELLOW,32,1);
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(156): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        DrawTestPage("<B2><E2><CA><D4>6:Í¼Æ¬<CF><D4>Ê¾<B2><E2><CA><D4>");
+                      ^~~~~~~~~~~~~~~~    ~~~~~~~~ ~~~~~~~~~~~~~~~~
+../Hardware/test.c(156): warning: passing 'char[19]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        DrawTestPage("<B2><E2><CA><D4>6:Í¼Æ¬<CF><D4>Ê¾<B2><E2><CA><D4>");
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Hardware/test.c(15): note: passing argument to parameter 'str' here
+void DrawTestPage(u8 *str)
+                      ^
+../Hardware/test.c(159): warning: passing 'char[3]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(30+12,75,"QQ",BLUE,YELLOW,16,1);
+                          ^~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(161): warning: passing 'char[3]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(90+12,75,"QQ",BLUE,YELLOW,16,1);
+                          ^~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+../Hardware/test.c(163): warning: passing 'char[3]' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Show_Str(150+12,75,"QQ",BLUE,YELLOW,16,1);
+                           ^~~~
+../Hardware/gui.h(22): note: passing argument to parameter 'str' here
+void Show_Str(u16 x, u16 y,u8 *str,u16 fc, u16 bc,u8 sizey,u8 mode);
+                               ^
+34 warnings generated.
+compiling lcd.c...
+../Hardware/LCD/lcd.c(3): warning: In file included from...
+../Hardware/LCD/lcdfont.h(404): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+"<D6><D0>",0x20,0x00,0x20,0x00,0x20,0x00,0xFE,0x03,0x22,0x02,0x22,0x02,0x22,0x02,0xFE,0x03,
+ ^~~~~~~~
+../Hardware/LCD/lcdfont.h(418): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+"<D6><D0>",0x80,0x00,0x80,0x00,0x80,0x00,0x80,0x00,0xFC,0x1F,0x84,0x10,0x84,0x10,0x84,0x10,
+ ^~~~~~~~
+../Hardware/LCD/lcdfont.h(432): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+"<D6><D0>",0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x00,0x00,0x08,0x00,0x00,0x08,0x00,0x00,
+ ^~~~~~~~
+../Hardware/LCD/lcdfont.h(451): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+"<D6><D0>",0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x80,0x01,0x00,
+ ^~~~~~~~
+4 warnings generated.
+assembling startup_gd32e23x.s...
+compiling system_gd32e23x.c...
+compiling gd32e23x_adc.c...
+compiling gd32e23x_cmp.c...
+compiling gd32e23x_crc.c...
+compiling gd32e23x_dbg.c...
+compiling gd32e23x_dma.c...
+compiling gd32e23x_exti.c...
+compiling gd32e23x_fmc.c...
+compiling gd32e23x_fwdgt.c...
+compiling gd32e23x_gpio.c...
+compiling gd32e23x_i2c.c...
+compiling gd32e23x_misc.c...
+compiling gd32e23x_pmu.c...
+compiling gd32e23x_rcu.c...
+compiling gd32e23x_rtc.c...
+compiling gd32e23x_spi.c...
+compiling gd32e23x_syscfg.c...
+compiling gd32e23x_timer.c...
+compiling gd32e23x_usart.c...
+compiling gd32e23x_wwdgt.c...
+linking...
+Program Size: Code=11708 RO-data=17388 RW-data=16 ZI-data=5144  
+FromELF: creating hex file...
+".\output\GD32E230C_START.axf" - 0 Error(s), 38 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: GigaDevice
+                https://gd32mcu.com/data/documents/pack/GigaDevice.GD32E23x_DFP.1.0.2.pack
+                GigaDevice.GD32E23x_DFP.1.0.2
+                GigaDevice GD32E23x Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_GD32E230C_START
+  C:/Users/Administrator/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Administrator/AppData/Local/Arm/Packs/GigaDevice/GD32E23x_DFP/1.0.2/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
