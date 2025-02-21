@@ -16,13 +16,20 @@
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_gpio.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_usart.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_pwc.h
+.\objects\main.o: ..\..\libraries\drivers\inc\at32f421_spi.h
+.\objects\main.o: ..\..\libraries\drivers\inc\at32f421_dma.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_debug.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_flash.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_wdt.h
 .\objects\main.o: ..\..\libraries\drivers\inc\at32f421_misc.h
+.\objects\main.o: ..\..\libraries\drivers\inc\at32f421_scfg.h
+.\objects\main.o: ..\inc\wk_spi.h
 .\objects\main.o: ..\inc\wk_usart.h
 .\objects\main.o: ..\inc\wk_wdt.h
+.\objects\main.o: ..\inc\wk_dma.h
 .\objects\main.o: ..\inc\wk_gpio.h
 .\objects\main.o: ..\inc\wk_system.h
+.\objects\main.o: D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
 .\objects\main.o: ..\app\lcd.h
 .\objects\main.o: D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+.\objects\main.o: ..\drive\at32_spiflash.h

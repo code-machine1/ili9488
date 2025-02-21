@@ -50,16 +50,24 @@ void wk_gpio_config(void)
   /* add user code end gpio_config 1 */
 
   /* gpio output config */
-  gpio_bits_reset(GPIOA, RESET_PIN | RS_PIN | RD_PIN | WR_PIN | CS_PIN);
+  gpio_bits_reset(CS_GPIO_PORT, CS_PIN);
+  gpio_bits_reset(GPIOA, RESET_PIN | RS_PIN | RD_PIN | WR_PIN | SPI1_CS_PIN);
   gpio_bits_reset(GPIOB, DB0_PIN | DB1_PIN | DB2_PIN | DB10_PIN | DB11_PIN | 
-                  DB12_PIN | DB13_PIN | DB14_PIN | DB15_PIN | DB3_PIN | 
-                  DB4_PIN | DB5_PIN | DB6_PIN | DB7_PIN | DB8_PIN | 
-                  DB9_PIN);
+                  DB3_PIN | DB4_PIN | DB5_PIN | DB6_PIN | DB7_PIN | 
+                  DB8_PIN | DB9_PIN);
+  gpio_bits_set(GPIOB, DB12_PIN | DB13_PIN | DB14_PIN | DB15_PIN);
 
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
   gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
   gpio_init_struct.gpio_mode = GPIO_MODE_OUTPUT;
-  gpio_init_struct.gpio_pins = RESET_PIN | RS_PIN | RD_PIN | WR_PIN | CS_PIN;
+  gpio_init_struct.gpio_pins = CS_PIN;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(CS_GPIO_PORT, &gpio_init_struct);
+
+  gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_MODERATE;
+  gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
+  gpio_init_struct.gpio_mode = GPIO_MODE_OUTPUT;
+  gpio_init_struct.gpio_pins = RESET_PIN | RS_PIN | RD_PIN | WR_PIN | SPI1_CS_PIN;
   gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
   gpio_init(GPIOA, &gpio_init_struct);
 

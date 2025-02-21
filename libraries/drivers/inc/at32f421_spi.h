@@ -443,10 +443,16 @@ typedef struct
   * @}
   */
 
+
+
+
+
 #define SPI1                            ((spi_type *) SPI1_BASE)
 #if defined (AT32F421Cx) || defined (AT32F421Kx) || defined (AT32F421Gx)
 #define SPI2                            ((spi_type *) SPI2_BASE)
 #endif
+
+
 
 /** @defgroup SPI_exported_functions
   * @{

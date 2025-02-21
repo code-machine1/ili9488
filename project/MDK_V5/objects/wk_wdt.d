@@ -17,7 +17,10 @@
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_gpio.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_usart.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_pwc.h
+.\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_spi.h
+.\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_dma.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_debug.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_flash.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_wdt.h
 .\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_misc.h
+.\objects\wk_wdt.o: ..\..\libraries\drivers\inc\at32f421_scfg.h

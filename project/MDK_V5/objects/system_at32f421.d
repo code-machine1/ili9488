@@ -14,7 +14,10 @@
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_gpio.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_usart.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_pwc.h
+.\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_spi.h
+.\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_dma.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_debug.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_flash.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_wdt.h
 .\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_misc.h
+.\objects\system_at32f421.o: ..\..\libraries\drivers\inc\at32f421_scfg.h

@@ -137,7 +137,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>AT32F421C8T7,USE_STDPERIPH_DRIVER,AT_START_F421_V1</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;..\app</IncludePath>
+              <IncludePath>..\..\libraries\drivers\inc;..\..\libraries\cmsis\cm4\core_support;..\..\libraries\cmsis\cm4\device_support;..\inc;..\app;..\drive</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -418,6 +418,16 @@
               <FileType>1</FileType>
               <FilePath>..\src\wk_wdt.c</FilePath>
             </File>
+            <File>
+              <FileName>wk_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\wk_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>wk_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\wk_dma.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -444,6 +454,16 @@
               <FilePath>..\..\libraries\drivers\src\at32f421_pwc.c</FilePath>
             </File>
             <File>
+              <FileName>at32f421_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f421_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>at32f421_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f421_dma.c</FilePath>
+            </File>
+            <File>
               <FileName>at32f421_debug.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f421_debug.c</FilePath>
@@ -462,6 +482,11 @@
               <FileName>at32f421_misc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\src\at32f421_misc.c</FilePath>
+            </File>
+            <File>
+              <FileName>at32f421_scfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\src\at32f421_scfg.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -487,6 +512,21 @@
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>pic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\pic.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>driver</GroupName>
+          <Files>
+            <File>
+              <FileName>at32_spiflash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\drive\at32_spiflash.c</FilePath>
             </File>
           </Files>
         </Group>

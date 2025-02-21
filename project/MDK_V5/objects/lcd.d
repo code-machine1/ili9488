@@ -17,10 +17,14 @@
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_gpio.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_usart.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_pwc.h
+.\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_spi.h
+.\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_dma.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_debug.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_flash.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_wdt.h
 .\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_misc.h
+.\objects\lcd.o: ..\..\libraries\drivers\inc\at32f421_scfg.h
 .\objects\lcd.o: D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
 .\objects\lcd.o: ..\app\lcdfont.h
 .\objects\lcd.o: ..\inc\wk_system.h
+.\objects\lcd.o: ..\drive\at32_spiflash.h

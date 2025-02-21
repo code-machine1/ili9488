@@ -29,13 +29,13 @@ extern u16  BACK_COLOR; //±³¾°ÑÕÉ«.Ä¬ÈÏÎª°×É«
 
 //-----------------LCD¶Ë¿Ú¶¨Òå---------------- 
  
-#define	LCD_CS_SET  gpio_bits_set(GPIOA,GPIO_PINS_4)    //Æ¬Ñ¡¶Ë¿Ú    PA4
+#define	LCD_CS_SET  gpio_bits_set(GPIOC,GPIO_PINS_13)    //Æ¬Ñ¡¶Ë¿Ú    PA4
 #define	LCD_RS_SET	gpio_bits_set(GPIOA,GPIO_PINS_1)    //Êý¾Ý/ÃüÁî   PA1	   
 #define	LCD_WR_SET	gpio_bits_set(GPIOA,GPIO_PINS_3)    //Ð´Êý¾Ý	  PA3
 #define	LCD_RD_SET	gpio_bits_set(GPIOA,GPIO_PINS_2)    //¶ÁÊý¾Ý	  PA2
 #define	LCD_RES_SET	gpio_bits_set(GPIOA,GPIO_PINS_0)    //¸´Î»	      PA0
 
-#define	LCD_CS_CLR  gpio_bits_reset(GPIOA,GPIO_PINS_4)     //Æ¬Ñ¡¶Ë¿Ú  		PC9
+#define	LCD_CS_CLR  gpio_bits_reset(GPIOC,GPIO_PINS_13)     //Æ¬Ñ¡¶Ë¿Ú  		PC9
 #define	LCD_RS_CLR	gpio_bits_reset(GPIOA,GPIO_PINS_1)     //Êý¾Ý/ÃüÁî		PC8	   
 #define	LCD_WR_CLR	gpio_bits_reset(GPIOA,GPIO_PINS_3)     //Ð´Êý¾Ý			PC7
 #define	LCD_RD_CLR	gpio_bits_reset(GPIOA,GPIO_PINS_2)     //¶ÁÊý¾Ý			PC6   
@@ -89,6 +89,7 @@ extern u16  BACK_COLOR; //±³¾°ÑÕÉ«.Ä¬ÈÏÎª°×É«
 #define LGRAYBLUE        0XA651 //Ç³»ÒÀ¶É«(ÖÐ¼ä²ãÑÕÉ«)
 #define LBBLUE           0X2B12 //Ç³×ØÀ¶É«(Ñ¡ÔñÌõÄ¿µÄ·´É«)
 
+#define BLOCK_SIZE 4096  // Ã¿¿éµÄ´óÐ¡£¬¸ù¾ÝRAMÈÝÁ¿ºÍÐèÇóµ÷Õû
 
 void LCD_WR_REG(u16 reg);//Ð´¼Ä´æÆ÷
 void LCD_WR_data(u16 data);//Ð´Êý¾Ý
@@ -121,7 +122,7 @@ void LCD_ShowIntNum(u16 x,u16 y,u16 num,u8 len,u16 fc,u16 bc,u8 sizey);//ÏÔÊ¾ÕûÊ
 void LCD_ShowFloatNum1(u16 x,u16 y,float num,u8 len,u16 fc,u16 bc,u8 sizey);//ÏÔÊ¾Á½Î»Ð¡Êý±äÁ¿
 
 void LCD_ShowPicture(u16 x,u16 y,u16 length,u16 width,const u8 pic[]);//ÏÔÊ¾Í¼Æ¬
-
+void TranferPicturetoTFT_LCD(uint8_t Pic_Num);
 void Set_Dir(u8 dir);
 void LCD_Init(void);													   	//³õÊ¼»¯
 #endif  

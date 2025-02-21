@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "lcdfont.h"
 #include "wk_system.h"
-
+#include "at32_spiflash.h"
 //管理LCD重要参数
 //默认为竖屏
 _lcd_dev lcddev;
@@ -940,6 +940,8 @@ void LCD_ShowPicture(u16 x, u16 y, u16 length, u16 width, const u8 pic[])
     }
 }
 
+
+
 /******************************************************************************/
 void LCD_WriteReg(u16 LCD_Reg, u16 LCD_RegValue)
 {
@@ -1162,7 +1164,7 @@ void LCD_Init(void)
     LCD_WR_REG(0x36);
     LCD_WR_DATA(0x08);
     LCD_WR_REG(0X11);
-	LCD_Display_Dir(1);
+    LCD_Display_Dir(1);
     wk_delay_ms(120);
     LCD_WR_REG(0x29);
     /* Sleep Out11h */
@@ -1174,5 +1176,88 @@ void LCD_Init(void)
 
 
 
+
+/**
+ * @name   TranferPicturetoTFT_LCD
+ * @brief  读取外部Flash图片资源到TFT-LCD显示
+ * @param  Pic_Num：图片序号
+ * @retval None
+ */
+
+void TranferPicturetoTFT_LCD(uint8_t Pic_Num)
+{
+    uint32_t uiDataLength = Pic_Size;
+    uint32_t uiPic_Addr = NULL;
+    uint16_t usPic_Data;
+    static u8 Read_data[BLOCK_SIZE] = {0};  // 图像数据缓冲区
+
+    //判断是第几张图片，设置存放位置
+    switch (Pic_Num)
+    {
+    case 1:
+        uiPic_Addr = Flash_Pic1_Addr;
+        break;
+
+    case 2:
+        uiPic_Addr = Flash_Pic2_Addr;
+        break;
+
+    case 3:
+        uiPic_Addr = Flash_Pic3_Addr;
+        break;
+
+    default:
+        //uiPic_Addr = Flash_Pic1_Addr;
+        break;
+    }
+
+    /*
+        //硬件SPI方式
+        //选择Flash芯片：CS输出低电平
+        FLASH_CS_LOW();
+        //硬件sip读取外部flash
+        //发送命令，读取数据
+        spi_byte_write(SPIF_READDATA);
+        //发送地址高字节
+        spi_byte_write((uiPic_Addr & 0xFF0000) >> 16);
+        //发送地址中字节
+        spi_byte_write((uiPic_Addr & 0xFF00) >> 8);
+        //发送地址低字节
+        spi_byte_write(uiPic_Addr & 0xFF);
+        //设置窗口大小
+        LCD_Address_Set(0, 0, 480, 320);
+        //开始传输数据
+        while (uiDataLength)
+        {
+            //从Flash读取数据，组成十六位数据
+            usPic_Data = spi_byte_read();
+            usPic_Data <<= 8;
+            usPic_Data += spi_byte_read();
+            //将数据写入到TFT-LCD屏幕中
+            LCD_WR_DATA(usPic_Data);
+            uiDataLength -= 2;
+        }
+        */
+
+    //硬件SPI（8位传输）+DMA方式
+    while (uiDataLength)
+    {
+        spiflash_read(Read_data, uiPic_Addr , BLOCK_SIZE);
+
+        for (u32 i = 0; i < BLOCK_SIZE; i += 2)
+        {
+            usPic_Data = Read_data[i];
+            usPic_Data <<= 8;
+            usPic_Data = usPic_Data + Read_data[i + 1];
+            LCD_WR_DATA(usPic_Data);
+        }
+
+        uiPic_Addr += BLOCK_SIZE;
+        uiDataLength -= BLOCK_SIZE;
+    }
+
+    //禁用Flash芯片：CS引脚输出高电平
+    //FLASH_CS_HIGH();
+}
 
 

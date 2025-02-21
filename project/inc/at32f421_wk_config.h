@@ -58,9 +58,9 @@ extern "C" {
 
 /* add user code begin dma define */
 /* user can only modify the dma define value */
-//#define DMA1_CHANNEL1_BUFFER_SIZE   0
-//#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   0
-//#define DMA1_CHANNEL1_PERIPHERAL_BASE_ADDR  0
+#define DMA1_CHANNEL1_BUFFER_SIZE   0
+#define DMA1_CHANNEL1_MEMORY_BASE_ADDR   0
+#define DMA1_CHANNEL1_PERIPHERAL_BASE_ADDR  0
 
 //#define DMA1_CHANNEL2_BUFFER_SIZE   0
 //#define DMA1_CHANNEL2_MEMORY_BASE_ADDR   0
@@ -80,6 +80,8 @@ extern "C" {
 /* add user code end dma define */
 
 /* Private defines -------------------------------------------------------------*/
+#define CS_PIN    GPIO_PINS_13
+#define CS_GPIO_PORT    GPIOC
 #define RESET_PIN    GPIO_PINS_0
 #define RESET_GPIO_PORT    GPIOA
 #define RS_PIN    GPIO_PINS_1
@@ -88,8 +90,8 @@ extern "C" {
 #define RD_GPIO_PORT    GPIOA
 #define WR_PIN    GPIO_PINS_3
 #define WR_GPIO_PORT    GPIOA
-#define CS_PIN    GPIO_PINS_4
-#define CS_GPIO_PORT    GPIOA
+#define SPI1_CS_PIN    GPIO_PINS_4
+#define SPI1_CS_GPIO_PORT    GPIOA
 #define DB0_PIN    GPIO_PINS_0
 #define DB0_GPIO_PORT    GPIOB
 #define DB1_PIN    GPIO_PINS_1
