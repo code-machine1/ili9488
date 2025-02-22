@@ -89,7 +89,7 @@ extern u16  BACK_COLOR; //背景颜色.默认为白色
 #define LGRAYBLUE        0XA651 //浅灰蓝色(中间层颜色)
 #define LBBLUE           0X2B12 //浅棕蓝色(选择条目的反色)
 
-#define BLOCK_SIZE 4096  // 每块的大小，根据RAM容量和需求调整
+#define BLOCK_SIZE       4096  //图片缓存区的大小，根据RAM容量和需求调整（最大4k）
 
 void LCD_WR_REG(u16 reg);//写寄存器
 void LCD_WR_data(u16 data);//写数据

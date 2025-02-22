@@ -143,9 +143,9 @@ extern "C" {
   
 //3张图片在外部Flash的地址，共占用150k * 3 = 450k
 #define Pic_Size          (uint32_t)307200
-#define Flash_Pic1_Addr   (uint32_t)0                                 //第一张图片的地址
-#define Flash_Pic2_Addr   (uint32_t)Flash_Pic1_Addr+Pic_Size          //第二张图片的地址
-#define Flash_Pic3_Addr   (uint32_t)Flash_Pic2_Addr+Pic_Size          //第三张图片的地址
+#define Flash_Pic1_Addr   (uint32_t)0                                    //第一张图片的地址
+#define Flash_Pic2_Addr   (uint32_t)Flash_Pic1_Addr+Pic_Size+ 0x35000         //第二张图片的地址
+#define Flash_Pic3_Addr   (uint32_t)Flash_Pic2_Addr+Pic_Size+ 0x35000           //第三张图片的地址
 
 
 /** @defgroup SPI_flash_exported_functions

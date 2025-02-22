@@ -1097,37 +1097,69 @@ void LCD_Init(void)
     lcddev.id = LCD_RD_DATA();
     lcddev.id <<= 8;
     lcddev.id |= LCD_RD_DATA();
-    LCD_WR_REG(0xE0);
+//        LCD_WR_REG(0xE0);
+//        LCD_WR_DATA(0x00);
+//        LCD_WR_DATA(0x07);
+//        LCD_WR_DATA(0x10);
+//        LCD_WR_DATA(0x09);
+//        LCD_WR_DATA(0x17);
+//        LCD_WR_DATA(0x0B);
+//        LCD_WR_DATA(0x41);
+//        LCD_WR_DATA(0x89);
+//        LCD_WR_DATA(0x4B);
+//        LCD_WR_DATA(0x0A);
+//        LCD_WR_DATA(0x0C);
+//        LCD_WR_DATA(0x0E);
+//        LCD_WR_DATA(0x18);
+//        LCD_WR_DATA(0x1B);
+//        LCD_WR_DATA(0x0F);
+//        LCD_WR_REG(0xE1);
+//        LCD_WR_DATA(0x00);
+//        LCD_WR_DATA(0x17);
+//        LCD_WR_DATA(0x1A);
+//        LCD_WR_DATA(0x04);
+//        LCD_WR_DATA(0x0E);
+//        LCD_WR_DATA(0x06);
+//        LCD_WR_DATA(0x2F);
+//        LCD_WR_DATA(0x45);
+//        LCD_WR_DATA(0x43);
+//        LCD_WR_DATA(0x02);
+//        LCD_WR_DATA(0x0A);
+//        LCD_WR_DATA(0x09);
+//        LCD_WR_DATA(0x32);
+//        LCD_WR_DATA(0x36);
+//        LCD_WR_DATA(0x0F);
+    LCD_WR_REG(0xE0);   //P-Gamma
     LCD_WR_DATA(0x00);
-    LCD_WR_DATA(0x07);
-    LCD_WR_DATA(0x10);
-    LCD_WR_DATA(0x09);
-    LCD_WR_DATA(0x17);
-    LCD_WR_DATA(0x0B);
-    LCD_WR_DATA(0x41);
-    LCD_WR_DATA(0x89);
-    LCD_WR_DATA(0x4B);
-    LCD_WR_DATA(0x0A);
-    LCD_WR_DATA(0x0C);
-    LCD_WR_DATA(0x0E);
+    LCD_WR_DATA(0x13);
     LCD_WR_DATA(0x18);
-    LCD_WR_DATA(0x1B);
-    LCD_WR_DATA(0x0F);
-    LCD_WR_REG(0xE1);
-    LCD_WR_DATA(0x00);
-    LCD_WR_DATA(0x17);
-    LCD_WR_DATA(0x1A);
     LCD_WR_DATA(0x04);
-    LCD_WR_DATA(0x0E);
+    LCD_WR_DATA(0x0F);
     LCD_WR_DATA(0x06);
-    LCD_WR_DATA(0x2F);
-    LCD_WR_DATA(0x45);
-    LCD_WR_DATA(0x43);
-    LCD_WR_DATA(0x02);
+    LCD_WR_DATA(0x3A);
+    LCD_WR_DATA(0x56);
+    LCD_WR_DATA(0x4D);
+    LCD_WR_DATA(0x03);
     LCD_WR_DATA(0x0A);
-    LCD_WR_DATA(0x09);
-    LCD_WR_DATA(0x32);
-    LCD_WR_DATA(0x36);
+    LCD_WR_DATA(0x06);
+    LCD_WR_DATA(0x30);
+    LCD_WR_DATA(0x3E);
+    LCD_WR_DATA(0x0F);
+    LCD_WR_REG(0XE1);   //N-Gamma
+    LCD_WR_DATA(0x00);
+    LCD_WR_DATA(0x13);
+    LCD_WR_DATA(0x18);
+    LCD_WR_DATA(0x01);
+    LCD_WR_DATA(0x11);
+    LCD_WR_DATA(0x06);
+    LCD_WR_DATA(0x38);
+    LCD_WR_DATA(0x34);
+    LCD_WR_DATA(0x4D);
+    LCD_WR_DATA(0x06);
+    LCD_WR_DATA(0x0D);
+    LCD_WR_DATA(0x0B);
+    LCD_WR_DATA(0x31);
+    LCD_WR_DATA(0x37);
     LCD_WR_DATA(0x0F);
     LCD_WR_REG(0XF7);
     LCD_WR_DATA(0xA9);
@@ -1242,7 +1274,7 @@ void TranferPicturetoTFT_LCD(uint8_t Pic_Num)
     //硬件SPI（8位传输）+DMA方式
     while (uiDataLength)
     {
-        spiflash_read(Read_data, uiPic_Addr , BLOCK_SIZE);
+        spiflash_read(Read_data, uiPic_Addr, BLOCK_SIZE);
 
         for (u32 i = 0; i < BLOCK_SIZE; i += 2)
         {

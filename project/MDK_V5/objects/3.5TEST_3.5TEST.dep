@@ -48,7 +48,7 @@ I (..\..\libraries\drivers\inc\at32f421_flash.h)(0x6778E1A5)
 I (..\..\libraries\drivers\inc\at32f421_wdt.h)(0x6778E1A5)
 I (..\..\libraries\drivers\inc\at32f421_misc.h)(0x6778E1A5)
 I (..\..\libraries\drivers\inc\at32f421_scfg.h)(0x6778E1A5)
-F (..\src\main.c)(0x67B84D24)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\src\main.c)(0x67B94A17)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\inc\at32f421_wk_config.h)(0x67B7E4F4)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\..\libraries\cmsis\cm4\device_support\at32f421.h)(0x6778E1A4)
@@ -79,9 +79,9 @@ I (..\inc\wk_dma.h)(0x67B7E4F4)
 I (..\inc\wk_gpio.h)(0x67B7E4F4)
 I (..\inc\wk_system.h)(0x67B7E4F4)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\string.h)(0x5E8E3CC2)
-I (..\app\lcd.h)(0x67B84004)
+I (..\app\lcd.h)(0x67B948ED)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdlib.h)(0x67B05AF3)
-I (..\drive\at32_spiflash.h)(0x67B8481F)
+I (..\drive\at32_spiflash.h)(0x67B9334B)
 F (..\src\wk_system.c)(0x67B7E4F4)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\wk_system.o --omf_browse .\objects\wk_system.crf --depend .\objects\wk_system.d)
 I (..\inc\wk_system.h)(0x67B7E4F4)
 I (..\..\libraries\cmsis\cm4\device_support\at32f421.h)(0x6778E1A4)
@@ -495,8 +495,8 @@ I (..\..\libraries\drivers\inc\at32f421_wdt.h)(0x6778E1A5)
 I (..\..\libraries\drivers\inc\at32f421_misc.h)(0x6778E1A5)
 I (..\..\libraries\drivers\inc\at32f421_scfg.h)(0x6778E1A5)
 F (.\startup_at32f421.s)(0x67B7E4F3)(--cpu Cortex-M4 -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8--pd "__UVISION_VERSION SETA 538" --pd "AT32F421C8T7 SETA 1"--list .\listings\startup_at32f421.lst --xref -o .\objects\startup_at32f421.o --depend .\objects\startup_at32f421.d)
-F (..\app\lcd.c)(0x67B8498C)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
-I (..\app\lcd.h)(0x67B84004)
+F (..\app\lcd.c)(0x67B95C6C)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (..\app\lcd.h)(0x67B948ED)
 I (..\inc\at32f421_wk_config.h)(0x67B7E4F4)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\..\libraries\cmsis\cm4\device_support\at32f421.h)(0x6778E1A4)
@@ -523,10 +523,10 @@ I (..\..\libraries\drivers\inc\at32f421_scfg.h)(0x6778E1A5)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdlib.h)(0x67B05AF3)
 I (..\app\lcdfont.h)(0x67B3EF9B)
 I (..\inc\wk_system.h)(0x67B7E4F4)
-I (..\drive\at32_spiflash.h)(0x67B8481F)
+I (..\drive\at32_spiflash.h)(0x67B9334B)
 F (..\app\pic.c)(0x67B81E76)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\pic.o --omf_browse .\objects\pic.crf --depend .\objects\pic.d)
 F (..\drive\at32_spiflash.c)(0x67B83A42)(--c99 -c --cpu Cortex-M4 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\libraries\drivers\inc -I ..\..\libraries\cmsis\cm4\core_support -I ..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\app -I ..\drive-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8\Device\Include-IC:\Users\Administrator\AppData\Local\Arm\Packs\ArteryTek\AT32F421_DFP\2.1.8-D__UVISION_VERSION="538" -DAT32F421C8T7 -DAT32F421C8T7 -DUSE_STDPERIPH_DRIVER -DAT_START_F421_V1-o .\objects\at32_spiflash.o --omf_browse .\objects\at32_spiflash.crf --depend .\objects\at32_spiflash.d)
-I (..\drive\at32_spiflash.h)(0x67B8481F)
+I (..\drive\at32_spiflash.h)(0x67B9334B)
 I (..\..\libraries\cmsis\cm4\device_support\at32f421.h)(0x6778E1A4)
 I (..\..\libraries\cmsis\cm4\core_support\core_cm4.h)(0x6778E1A4)
 I (D:\Work Program\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
