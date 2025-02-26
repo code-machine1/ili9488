@@ -114,11 +114,36 @@ int main(void)
     spiflash_init();
     flash_id_index = spiflash_read_id();
     LCD_Init();
+    TranferPicturetoTFT_LCD(2);
+    
+     uint8_t a =0;
+	 uint8_t test_flag = 0;
     /* add user code end 2 */
     while (1)
     {
+		
+
+		
         /* add user code begin 3 */
-        //LCD_Test();
+        for (uint8_t i = 0; i < 10; i++)
+        {
+            LCD_ShowChar1(150, 150,i,WHITE,0x2105,64,0);
+            DrawProgressBar(34,85,46,205,a,RED);
+			wk_delay_ms(200);
+			if(test_flag == 0)
+			{
+			    a++;
+			    if(a>=100)
+					test_flag =1;
+			}
+			else
+			{
+			 a--;
+				if(a<=0)
+					test_flag =0;
+			}
+			
+        }
 
         /* add user code end 3 */
     }
@@ -128,8 +153,8 @@ int main(void)
 void LCD_Test(void)
 {
     ++FPS_Count;
-    TranferPicturetoTFT_LCD(3); 
-	//LCD_Clear(WHITE);
+    TranferPicturetoTFT_LCD(3);
+    //LCD_Clear(WHITE);
     //LCD_ShowIntNum(0, 180, FPS, 3, BLUE, WHITE, 32);
 }
 

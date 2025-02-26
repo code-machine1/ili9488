@@ -246,6 +246,7 @@ void LCD_Fill(u16 xsta, u16 ysta, u16 xend, u16 yend, u16 color)
 ******************************************************************************/
 void LCD_DrawPoint(u16 x, u16 y, u16 color)
 {
+
     LCD_Address_Set(x, y, x, y); //设置光标位置
     LCD_WR_DATA(color);
 }
@@ -730,7 +731,7 @@ void LCD_ShowChinese32x32(u16 x, u16 y, u8 *s, u16 fc, u16 bc, u8 sizey, u8 mode
 ******************************************************************************/
 void LCD_ShowChar(u16 x, u16 y, u8 num, u16 fc, u16 bc, u8 sizey, u8 mode)
 {
-    u8 temp, sizex, t, m = 0;
+    u16 temp, sizex, t, m = 0;
     u16 i, TypefaceNum; //一个字符所占字节大小
     u16 x0 = x;
     sizex = sizey / 2;
@@ -755,6 +756,14 @@ void LCD_ShowChar(u16 x, u16 y, u8 num, u16 fc, u16 bc, u8 sizey, u8 mode)
         else if (sizey == 32)
         {
             temp = ascii_3216[num][i];    //调用16x32字体
+        }
+        else if (sizey == 40)
+        {
+            temp = ascii_4020[num][i];    //调用16x32字体
+        }
+        else if (sizey == 64)
+        {
+            temp = ascii_6432[num][i];    //调用16x32字体
         }
         else
         {
@@ -802,6 +811,57 @@ void LCD_ShowChar(u16 x, u16 y, u8 num, u16 fc, u16 bc, u8 sizey, u8 mode)
     }
 }
 
+void LCD_ShowChar1(u16 x, u16 y, u8 num, u16 fc, u16 bc,u8 size, u8 mode)
+{
+    u16 temp, t1/*t*/;
+    u16 t;                                           
+    u16 y0 = y; 
+
+    for (t = 0; t < 256; t++) //总共256个数据
+    {
+        if (size == 64)
+        {
+            temp = GBK6464[num][t];    
+        }
+        else
+        {
+            return;    //没有的字库
+        }
+
+        for (t1 = 0; t1 < 8; t1++) //yuan 8
+        {
+            if (temp & 0x80)
+            {
+                LCD_DrawPoint(x, y, fc);
+            }
+            else if (mode == 0)
+            {
+                LCD_DrawPoint(x, y, bc);
+            }
+
+            temp <<= 1;
+            y++;
+
+            if (y >= lcddev.height)
+            {
+                return;    //超区域了
+            }
+
+            if ((y - y0) == size)
+            {
+                y = y0;
+                x++;
+
+                if (x >= lcddev.width)
+                {
+                    return;    //超区域了
+                }
+
+                break;
+            }
+        }
+    }
+}
 
 /******************************************************************************
       函数说明：显示字符串
@@ -878,6 +938,10 @@ void LCD_ShowIntNum(u16 x, u16 y, u16 num, u8 len, u16 fc, u16 bc, u8 sizey)
         LCD_ShowChar(x + t * sizex, y, temp + 48, fc, bc, sizey, 0);
     }
 }
+
+
+
+
 
 
 /******************************************************************************
@@ -1097,38 +1161,38 @@ void LCD_Init(void)
     lcddev.id = LCD_RD_DATA();
     lcddev.id <<= 8;
     lcddev.id |= LCD_RD_DATA();
-//        LCD_WR_REG(0xE0);
-//        LCD_WR_DATA(0x00);
-//        LCD_WR_DATA(0x07);
-//        LCD_WR_DATA(0x10);
-//        LCD_WR_DATA(0x09);
-//        LCD_WR_DATA(0x17);
-//        LCD_WR_DATA(0x0B);
-//        LCD_WR_DATA(0x41);
-//        LCD_WR_DATA(0x89);
-//        LCD_WR_DATA(0x4B);
-//        LCD_WR_DATA(0x0A);
-//        LCD_WR_DATA(0x0C);
-//        LCD_WR_DATA(0x0E);
-//        LCD_WR_DATA(0x18);
-//        LCD_WR_DATA(0x1B);
-//        LCD_WR_DATA(0x0F);
-//        LCD_WR_REG(0xE1);
-//        LCD_WR_DATA(0x00);
-//        LCD_WR_DATA(0x17);
-//        LCD_WR_DATA(0x1A);
-//        LCD_WR_DATA(0x04);
-//        LCD_WR_DATA(0x0E);
-//        LCD_WR_DATA(0x06);
-//        LCD_WR_DATA(0x2F);
-//        LCD_WR_DATA(0x45);
-//        LCD_WR_DATA(0x43);
-//        LCD_WR_DATA(0x02);
-//        LCD_WR_DATA(0x0A);
-//        LCD_WR_DATA(0x09);
-//        LCD_WR_DATA(0x32);
-//        LCD_WR_DATA(0x36);
-//        LCD_WR_DATA(0x0F);
+    //        LCD_WR_REG(0xE0);
+    //        LCD_WR_DATA(0x00);
+    //        LCD_WR_DATA(0x07);
+    //        LCD_WR_DATA(0x10);
+    //        LCD_WR_DATA(0x09);
+    //        LCD_WR_DATA(0x17);
+    //        LCD_WR_DATA(0x0B);
+    //        LCD_WR_DATA(0x41);
+    //        LCD_WR_DATA(0x89);
+    //        LCD_WR_DATA(0x4B);
+    //        LCD_WR_DATA(0x0A);
+    //        LCD_WR_DATA(0x0C);
+    //        LCD_WR_DATA(0x0E);
+    //        LCD_WR_DATA(0x18);
+    //        LCD_WR_DATA(0x1B);
+    //        LCD_WR_DATA(0x0F);
+    //        LCD_WR_REG(0xE1);
+    //        LCD_WR_DATA(0x00);
+    //        LCD_WR_DATA(0x17);
+    //        LCD_WR_DATA(0x1A);
+    //        LCD_WR_DATA(0x04);
+    //        LCD_WR_DATA(0x0E);
+    //        LCD_WR_DATA(0x06);
+    //        LCD_WR_DATA(0x2F);
+    //        LCD_WR_DATA(0x45);
+    //        LCD_WR_DATA(0x43);
+    //        LCD_WR_DATA(0x02);
+    //        LCD_WR_DATA(0x0A);
+    //        LCD_WR_DATA(0x09);
+    //        LCD_WR_DATA(0x32);
+    //        LCD_WR_DATA(0x36);
+    //        LCD_WR_DATA(0x0F);
     LCD_WR_REG(0xE0);   //P-Gamma
     LCD_WR_DATA(0x00);
     LCD_WR_DATA(0x13);
@@ -1292,4 +1356,13 @@ void TranferPicturetoTFT_LCD(uint8_t Pic_Num)
     //FLASH_CS_HIGH();
 }
 
+void DrawProgressBar(u16 x1, u16 y1, u16 x2, u16 y2,u8 scale,u16 color)
+{
+	u16 Bar_Length = y2-y1;
+	u16 len = Bar_Length*((float)(100-scale)/100);
+	
+	LCD_Fill(x1,y1,x2,y1+len,0x18a3);
+	LCD_Fill(x1,y1+len,x2,y2,0xfd64);
+	LCD_ShowPicture(x1-2,y1+len,14,12,gImage_1);
+}
 

@@ -60,7 +60,7 @@
 uint32_t FPS = 0;
 uint32_t FPS_Count = 0;
 uint32_t id = 0;
-
+extern const unsigned char gImage_1[336];
 /* add user code end private variables */
 
 /* private function prototypes --------------------------------------------*/
@@ -114,18 +114,38 @@ int main(void)
     spiflash_init();
     flash_id_index = spiflash_read_id();
     LCD_Init();
+    TranferPicturetoTFT_LCD(2);
+    uint8_t a = 10;
+    uint8_t test_flag = 0;
 
     /* add user code end 2 */
     while (1)
     {
         /* add user code begin 3 */
-        //LCD_Test();
-		TranferPicturetoTFT_LCD(1);
-		wk_delay_ms(1000);
-		TranferPicturetoTFT_LCD(2);
-		wk_delay_ms(1000);
-		TranferPicturetoTFT_LCD(3);
-		wk_delay_ms(1000);
+        for (uint8_t i = 0; i < 10; i++)
+        {
+            LCD_ShowChar1(150, 150, i, WHITE, 0x2104, 64, 0);
+            DrawProgressBar(35, 80, 45, 208, a, RED);
+            wk_delay_ms(200);
+
+            if (test_flag == 0)
+            {
+                a++;
+                if (a >= 100)
+                {
+                    test_flag = 1;
+                }
+            }
+            else
+            {
+                a--;
+                if (a <= 10)
+                {
+                    test_flag = 0;
+                }
+            }
+        }
+
         /* add user code end 3 */
     }
 }
